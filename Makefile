@@ -4,7 +4,7 @@ LIBFT = libft/libft.a
 
 CC = cc
 
-SRCS = main.c parse.c lst.c
+SRCS = main.c parse.c lst.c actions/poppush.c actions/swap_push.c actions/s.c actions/p.c actions/r.c actions/rr.c index_sort.c
 
 HEADERS = push_swap.h
 
@@ -13,7 +13,11 @@ OBJS = $(SRCS:.c=.o)
 CFLAGS = -Wall -Wextra -Werror
 
 ifdef DEBUG
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -g
+endif
+
+ifdef CHECK
+CFLAGS += -fsanitize=address
 endif
 
 all: $(NAME)

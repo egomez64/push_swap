@@ -6,7 +6,7 @@
 /*   By: egomez <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:09:03 by egomez            #+#    #+#             */
-/*   Updated: 2024/02/03 11:53:52 by egomez           ###   ########.fr       */
+/*   Updated: 2024/02/09 11:40:48 by egomez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,13 @@ int	main(int ac, char **av)
 	char	**tmp;
 	int	y;
 	t_stack	*stack_a;
-	t_stack	*aff;
+	t_stack *stack_b;
+	t_stack	*affa;
+	//t_stack *affb;
 	
 	i = 1;
+	stack_a = NULL;
+	//stack_b = NULL;
 	if (ac < 2)
 		return (0);
 	while (av[i] != 0)
@@ -45,12 +49,48 @@ int	main(int ac, char **av)
 		i++;
 	}
 	free(tmp);
-	aff = stack_a;
-	while(aff && aff->next)
+	affa = stack_a;
+	while (affa && affa->next)
 	{
-		printf("%d ", aff->val);
-		aff = aff->next;
+		printf("%d ", affa->val);
+		affa = affa->next;
 	}
-	printf("%d", aff->val);
+	printf("%d\n", affa->val);
+	stack_a = to_index(&stack_a);
+	affa = stack_a;
+	while (affa && affa->next)
+	{
+		printf("%d ", affa->val);
+		affa = affa->next;
+	}
+	printf("%d\n", affa->val);
+	/*printf("%d\n", affa->val);
+	push_stack(&stack_a, &stack_b);
+	push_stack(&stack_a, &stack_b);
+	push_stack(&stack_a, &stack_b);
+	rrr(&stack_a, &stack_b);
+	affa = stack_a;
+	affb = stack_b;
+	printf("a | b\n");
+	while((affa && affa->next) || (affb && affb->next))
+	{
+		if (affa)
+		{
+			printf("%d | ", affa->val);
+			affa = affa->next;
+		}
+		if (affb)
+		{
+			printf("%d", affb->val);
+			affb = affb->next;
+		}
+		printf("\n");
+	}
+	if (affa)
+		printf("%d", affa->val);
+	printf(" | ");
+	if (affb)
+		printf("%d", affb->val);*/
 	lstclear(&stack_a);
+	lstclear(&stack_b);
 }
