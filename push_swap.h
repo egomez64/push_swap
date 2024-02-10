@@ -36,5 +36,8 @@ void	rrb(t_stack **lst_b);
 void	rrr(t_stack **lst_a, t_stack **lst_b);
 void	lstadd_front(t_stack **lst, t_stack *new);
 t_stack	*to_index(t_stack **lst);
+int	lstcount(t_stack **lst);
+t_stack	*a_to_b(t_stack **lsta, t_stack **lstb, int count);
+t_stack	*b_to_a(t_stack **lsta, t_stack **lstb);
 
 #endif

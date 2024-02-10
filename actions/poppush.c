@@ -6,7 +6,7 @@
 /*   By: egomez <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 09:58:11 by egomez            #+#    #+#             */
-/*   Updated: 2024/02/08 12:38:28 by egomez           ###   ########.fr       */
+/*   Updated: 2024/02/10 11:23:48 by egomez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,20 @@ void	push_back(t_stack **lst, int val)
 		*lst = lstnew(val);
 	else
 		lstadd_back(lst, lstnew(val));
+}
+
+int	lstcount(t_stack **lst)
+{
+	int	i;
+	t_stack	*p_list;
+
+	i = 0;
+	p_list = *lst;
+	while (p_list && p_list->next)
+	{
+		i++;
+		p_list = p_list->next;
+	}
+	i++;
+	return (i);
 }
