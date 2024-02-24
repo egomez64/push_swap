@@ -50,7 +50,7 @@ void	lstclear(t_stack **lst)
 {
 	if (!lst && !(*lst))
 		return ;
-	if ((*lst)->next)
+	if (*lst && (*lst)->next)
 		lstclear(&(*lst)->next);
 	lstdelone(*lst);
 	*lst = NULL;

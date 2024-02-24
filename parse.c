@@ -15,6 +15,8 @@ int	parse(char *str)
 	int	i;
 
 	i = 0;
+	if (!str)
+		return (0);
 	while (str[i] != 0)
 	{
 		if (str[i] > 47 && str[i] < 58)

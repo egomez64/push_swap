@@ -4,7 +4,7 @@ LIBFT = libft/libft.a
 
 CC = cc
 
-SRCS = main.c parse.c actions/lst.c actions/poppush.c actions/swap_push.c actions/s.c actions/p.c actions/r.c actions/rr.c algo/index_sort.c algo/sort.c
+SRCS = main.c parse.c actions/lst.c actions/poppush.c actions/swap_push.c actions/s.c actions/p.c actions/r.c actions/rr.c algo/index_sort.c algo/sort.c algo/little_sort.c
 
 HEADERS = push_swap.h
 

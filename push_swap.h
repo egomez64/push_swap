@@ -37,7 +37,12 @@ void	rrr(t_stack **lst_a, t_stack **lst_b);
 void	lstadd_front(t_stack **lst, t_stack *new);
 t_stack	*to_index(t_stack **lst);
 int	lstcount(t_stack **lst);
-t_stack	*a_to_b(t_stack **lsta, t_stack **lstb, int count);
-t_stack	*b_to_a(t_stack **lsta, t_stack **lstb);
+t_stack	*a_to_b(t_stack **lsta);
+void	b_to_a(t_stack **lst_b, t_stack **lst_a);
+int	find_max(t_stack **lst);
+void	little_sort(t_stack **lst);
+void	medium_sort(t_stack **lst_a, t_stack **lst_b);
+int	lenlst(t_stack **lst);
+int	is_sorted(t_stack **lst_a);
 
 #endif
