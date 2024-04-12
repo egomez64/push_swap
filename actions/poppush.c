@@ -22,7 +22,7 @@ void	lstadd_front(t_stack **lst, t_stack *new)
 
 int	pop(t_stack **lst)
 {
-	int	val;
+	int		val;
 	t_stack	*tmp;
 
 	if (!*lst)
@@ -52,7 +52,7 @@ void	push_back(t_stack **lst, int val)
 
 int	lstcount(t_stack **lst)
 {
-	int	i;
+	int		i;
 	t_stack	*p_list;
 
 	i = 0;

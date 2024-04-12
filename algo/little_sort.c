@@ -15,7 +15,7 @@
 int	find_min(t_stack **lst)
 {
 	t_stack	*tmp;
-	int	val;
+	int		val;
 
 	tmp = *lst;
 	val = tmp->val;
@@ -52,10 +52,8 @@ void	little_sort(t_stack **lst)
 void	medium_sort(t_stack **lst_a, t_stack **lst_b)
 {
 	int	min;
-	int	i;
-	
-	i = 0;
-	while (i < 2)
+
+	while (lenlst(lst_a) > 3)
 	{
 		min = find_min(lst_a);
 		while ((*lst_a)->val != min)
@@ -63,7 +61,7 @@ void	medium_sort(t_stack **lst_a, t_stack **lst_b)
 		pb(lst_b, lst_a);
 	}
 	little_sort(lst_a);
-	if ((*lst_b)->val < (*lst_b)->next->val)
+	if ((*lst_b)->next && ((*lst_b)->val < (*lst_b)->next->val))
 		sb(lst_b);
 	pa(lst_a, lst_b);
 	pa(lst_a, lst_b);
@@ -72,7 +70,9 @@ void	medium_sort(t_stack **lst_a, t_stack **lst_b)
 int	is_sorted(t_stack **lst_a)
 {
 	t_stack	*tmp;
-	
+
+	if (lenlst(lst_a) == 1)
+		return (1);
 	tmp = *lst_a;
 	while (tmp && tmp->next)
 	{

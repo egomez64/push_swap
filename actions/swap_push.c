@@ -17,7 +17,7 @@ void	swap_stack(t_stack **lst)
 	int	tmp1;
 	int	tmp2;
 
-	if(!*lst || !(*lst)->next)
+	if (!*lst || !(*lst)->next)
 		return ;
 	tmp1 = pop(lst);
 	tmp2 = pop(lst);
@@ -47,8 +47,8 @@ void	rotate_stack(t_stack **lst)
 
 void	reverse_rotate_stack(t_stack **lst)
 {
-	int	tmp;
-	int	i;
+	int		tmp;
+	int		i;
 	t_stack	*last;
 
 	i = 0;

@@ -26,9 +26,9 @@ void	get_index(t_stack *tmp, t_stack *index, t_stack *compare)
 
 t_stack	*to_index(t_stack **lst)
 {
-	t_stack *tmp;
-	t_stack *compare;
-	t_stack *index;
+	t_stack	*tmp;
+	t_stack	*compare;
+	t_stack	*index;
 	t_stack	*tmp_index;
 
 	tmp = *lst;

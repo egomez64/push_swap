@@ -19,9 +19,9 @@
 
 typedef struct s_list
 {
-	void *content;
-	struct s_list *next;
-} t_list;
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 void			ft_bzero(void *s, size_t n);
 unsigned int	ft_strlcpy(char *dst, const char *src, size_t size);
@@ -57,4 +57,5 @@ int				ft_isalnum(int c);
 int				ft_isascii(int c);
 int				ft_isprint(int c);
 int				ft_atoi(const char *nptr, int *error);
+void			free_split(char **tmp);
 #endif

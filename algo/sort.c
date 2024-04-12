@@ -14,9 +14,9 @@
 
 int	lenlst(t_stack **lst)
 {
-	int	i;
+	int		i;
 	t_stack	*tmp;
-	
+
 	i = 0;
 	tmp = *lst;
 	while (tmp && tmp->next)
@@ -31,7 +31,7 @@ int	lenlst(t_stack **lst)
 int	find_max(t_stack **lst)
 {
 	t_stack	*tmp;
-	int	val;
+	int		val;
 
 	tmp = *lst;
 	val = tmp->val;
@@ -56,10 +56,10 @@ int	set_chunk(int len)
 
 t_stack	*a_to_b(t_stack **lst_a)
 {
-	int	chunk;
-	int	i;
-	t_stack *lst_b;
-	int	len;
+	int		chunk;
+	int		i;
+	t_stack	*lst_b;
+	int		len;
 
 	lst_b = NULL;
 	len = lenlst(lst_a);
@@ -80,27 +80,24 @@ t_stack	*a_to_b(t_stack **lst_a)
 	return (lst_b);
 }
 
-void	b_to_a(t_stack **lst_b, t_stack **lst_a)
+void	b_to_a(t_stack **lst_b, t_stack **lst_a, int *len_b, int *max)
 {
-	int	max;
-	int	mid;
-	int	i;
-	int	len_b;
+	int		mid;
+	int		i;
 	t_stack	*tmp_b;
 
-	len_b = lenlst(lst_b);
-	while (len_b > 0)
+	while (*len_b > 0)
 	{
-		max = find_max(lst_b);
+		*max = find_max(lst_b);
 		mid = lenlst(lst_b) / 2;
 		i = 0;
 		tmp_b = *lst_b;
-		while (tmp_b->val != max)
+		while (tmp_b->val != *max)
 		{
 			tmp_b = tmp_b->next;
 			i++;
 		}
-		while((*lst_b)->val != max)
+		while ((*lst_b)->val != *max)
 		{
 			if (i >= mid)
 				rrb(lst_b);
@@ -108,6 +105,6 @@ void	b_to_a(t_stack **lst_b, t_stack **lst_a)
 				rb(lst_b);
 		}
 		pa(lst_a, lst_b);
-		len_b--;
+		(*len_b)--;
 	}
 }

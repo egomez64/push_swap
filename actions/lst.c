@@ -18,13 +18,13 @@ t_stack	*lstnew(int num)
 
 	new = malloc(sizeof(t_stack));
 	new->val = num;
-	new->next =NULL;
+	new->next = NULL;
 	return (new);
 }
 
 t_stack	*lstlast(t_stack *lst)
 {
-	while(lst && lst->next)
+	while (lst && lst->next)
 		lst = lst->next;
 	return (lst);
 }
